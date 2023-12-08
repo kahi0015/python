@@ -1,0 +1,39 @@
+# Author: Mo Kahil
+# Email: kahi0015@outlook.com
+# Game: Guess That Number!
+import random
+
+
+def guess_number():
+    # Generate a random number
+    mynumber = random.randint(1, 10)
+
+    # Prompt to enter username
+    username = input("Welcome, please enter a username: \n")
+    print("Hello " + username + ", I have a number between 1 and 10 in mind. Can you guess what it is? \n")
+    print("You have 3 chances to win!\n")
+
+    # Guess counter initialization
+    guess_counter = 0
+    guessed_no = 0
+    points = 0
+
+    while guess_counter < 3:
+        guessed_no = int(input("Enter your guess: \n"))
+        points = 3 - guess_counter
+        guess_counter += 1
+
+        if guessed_no < mynumber:
+            print("Your guess is lower than what I have!")
+        if guessed_no > mynumber:
+            print("Your guess is higher than what I have!")
+        if guessed_no == mynumber:
+            break
+
+    if guessed_no == mynumber:
+        print("Good Job, " + username + "! Your guess " + str(guessed_no) + " is correct.")
+        print("You won " + str(points) + " points")
+    else:
+        print("Sorry, " + username + "! Your guess " + str(guessed_no) + " is not correct.")
+        print("The correct number was " + str(mynumber))
+        print("You did not win any points.")
