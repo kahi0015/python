@@ -1,6 +1,8 @@
 # Author: Mo Kahil
 # Email: kahi0015@outlook.com
 # Game: Guess That Number!
+# Adapted from code by Djangocentral
+# Source: https://djangocentral.com/creating-a-guessing-game-in-python/
 import random
 
 
